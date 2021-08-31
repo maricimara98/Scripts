@@ -1,0 +1,56 @@
+#!/bin/bash
+
+HEIGHT=15
+WIDTH=60
+CHOICE_HEIGHT=7
+BACKTITLE="limpeza.sh"
+TITLE="Atualização e Limpeza"
+MENU="Escolha uma das opções:"
+
+OPTIONS=(1 "Obter novas atualizações"
+         2 "Realiza uma atualização"
+         3 "Apaga arquivos antigos baixados para instalação"
+         4 "Apagar arquivos baixados para instalação"
+         5 "Remove pacotes"
+         6 "Remove automaticamente todos os pacotes não usados"
+         7 "Atualiza a distribuição")
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+    1)
+        echo "Obtendo novas atualizações"
+        sudo apt update
+        ;;
+    2)
+         echo "Realizando uma atualização"
+        sudo apt upgrade
+        ;;
+    3)
+        echo "Apagando arquivos antigos baixados para instalação"
+        sudo apt autoclean
+        ;;
+    4)
+        echo "Apagar arquivos baixados para instalação"
+        sudo apt clean
+        ;;
+    5)
+        echo "Removendo pacotes"
+        sudo apt remove
+        ;;
+    6)
+        echo "Removendo automaticamente todos os pacotes não usados"
+        sudo apt autoremove
+        ;;
+    7)
+        echo "Atualizandro a distribuição"
+        sudo apt dist-upgrade
+        ;;
+esac

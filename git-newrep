@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Variaveis
+USUARIO=$(git config user.name) # id do usuario / o mesmo do git
+
+echo "Nome do repositório"
+read DIRECTORY
+
+clear
+
+echo "~~~~~~~~~~~~~~~~~~~~~"	
+echo "      $DIRECTORY     "
+echo "~~~~~~~~~~~~~~~~~~~~~"
+echo "1) Criar um novo repositório"
+echo "2) Empurrar um epositório existente"
+echo "0) Sair"
+# '-p' Exibe a mensagem 'Opção' no prompt de entrada.
+# '-n1' Lê o caractere único e armazena em 'OPCAO'.
+read -n1 -p 'Opção: ' OPCAO
+echo
+
+case $OPCAO in
+    1)
+        # Cria um novo repositório na linha de comando
+        echo "# $DIRECTORY" >> README.md
+        git init
+        git add README.md
+        git commit -m "first commit"
+        git branch -M main
+        git remote add origin git@github.com:$USUARIO/$DIRECTORY.git
+        git push -u origin main
+        ;;
+    2)
+        # Empurrar um epositório existente a partir da linha de comando
+        git remote add origin git@github.com:$USUARIO/$DIRECTORY.git
+        git branch -M main
+        git push -u origin main
+        ;;
+esac

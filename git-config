@@ -1,0 +1,22 @@
+#!/bin/bash
+
+sudo apt install git
+# configurações iniciais do usuário
+echo "Escreva seu nome de usuário"
+read USER_NAME
+echo "Escreva seu email"
+read USER_EMAIL
+
+git config --global user.name $USER_NAME
+git config --global user.email $USER_EMAIL 
+
+# ativa as cores nas respostas de comandos
+git config --global color.ui true
+
+# verifica se já possui chave SSH
+ls -lah ~/.ssh
+# gera um novo par de chave SSH
+ssh-keygen -t rsa -b 4096 -C USER_EMAIL
+
+# Teste a conexão via SSH
+ssh -T git@github.com

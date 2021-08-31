@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd ~    # /home/user
+DIRECTORY="Scripts"
+SCRIPT=$(https://github.com/maricimara98/Scripts/)
+
+# Verifica se o diretório não exite e cria-o
+if [ ! -d "$DIRECTORY" ]; then
+    mkdir $DIRECTORY
+    echo "Diretório criado"
+fi
+

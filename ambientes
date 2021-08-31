@@ -1,0 +1,27 @@
+#!/bin/bash
+
+clear
+
+echo "~~~~~~~~~~~~~~~~~~~~~"	
+echo "      Ambientes      "
+echo "~~~~~~~~~~~~~~~~~~~~~"
+echo "1) Analise de Dados"
+echo "2) Opção 2"
+echo "0) Sair"
+# '-p' Exibe a mensagem 'Opção' no prompt de entrada.
+# '-n1' Lê o caractere único e armazena em 'OPCAO'.
+read -n1 -p 'Opção: ' OPCAO
+echo
+
+case $OPCAO in
+    1)  
+        python --version
+        python3 --version
+        python3.9 --version
+        
+        ;;
+    2)
+        # Empurrar um epositório existente a partir da linha de comando
+        echo 'nada ainda'
+        ;;
+esac

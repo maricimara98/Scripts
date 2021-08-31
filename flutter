@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /opt
+export PATH="$PATH:`pwd`/flutter/bin"
+which flutter      
+flutter doctor 

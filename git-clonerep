@@ -3,7 +3,7 @@
 # Variaveis
 USUARIO=$(git config user.name) # id do usuario / o mesmo do git
 cd ~    # /home/user
-DIRECTORY="Projetos"
+DIRECTORY="Público"
 
 # Verifica se o diretório não exite e cria-o
 if [ ! -d "$DIRECTORY" ]; then
@@ -11,7 +11,7 @@ if [ ! -d "$DIRECTORY" ]; then
     echo "Diretório criado"
 fi
 
-cd Projetos
+cd $DIRECTORY
 
 # Pega json que contem todos os repositorios e extrai as URLs (API do GitHub)
 LIST_URL_CLONES=`curl --silent https://api.github.com/users/$USUARIO/repos -q | 

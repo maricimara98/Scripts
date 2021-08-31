@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Variaveis
+Digite o IP do seu aparelho
+read IP
+
+# Comandos
+cd ~
+cd Android/Sdk/platform-tools
+./adb tcpip 5555    # Verificar porta
+./adb connect $IP   # Conectar ao IP do Aparelho
