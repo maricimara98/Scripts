@@ -24,6 +24,3 @@ for URL in $LIST_URL_CLONES; do
     echo "==>> clonando: " ${URL}
     git clone ${URL}
 done
-
-# Resolve o problema de o Git sempre pedir as credenciais do usuário
-git remote set-url origin git@github.com:$USUARIO
