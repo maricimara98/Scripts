@@ -16,7 +16,7 @@ git config --global color.ui true
 # verifica se já possui chave SSH
 ls -lah ~/.ssh
 # gera um novo par de chave SSH
-ssh-keygen -t rsa -b 4096 -C USER_EMAIL
+ssh-keygen -t rsa -b 4096 -C $USER_EMAIL
 
 # Teste a conexão via SSH
 ssh -T git@github.com
