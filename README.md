@@ -49,6 +49,11 @@ script       |função     |
 [python-3.9](https://github.com/maricimara98/scripts/blob/main/python-3.9)  |instala python 3.9.6
 
 
+### Resolve o problema de o Git sempre pedir as credenciais do usuário
+```
+git remote set-url origin git@github.com:USUARIO/REPOSITÓRIO
+```
+
 
 
 
