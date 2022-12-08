@@ -3,7 +3,7 @@
 # Variaveis
 USUARIO=$(git config user.name) # id do usuario / o mesmo do git
 cd ~    # /home/user
-DIRECTORY="Público"
+DIRECTORY="Projetos"
 
 # Verifica se o diretório não exite e cria-o
 if [ ! -d "$DIRECTORY" ]; then
